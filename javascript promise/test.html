@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Search</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.container {
+    text-align: center;
+    width: 100%;
+}
+.half1 {
+    margin-bottom: 20px;
+}
+input#name {
+    width: 60%;
+    height: 50px;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #ff4c4c;
+    border-radius: 5px;
+    background-color: #262626;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+input#name:focus {
+    border-color: #ff1a1a;
+    box-shadow: 0 0 8px #ff1a1a;
+}
+button {
+    width: 150px;
+    height: 50px;
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+button:hover {
+    background-color: #ff1a1a;
+    box-shadow: 0 0 10px #ff4c4c;
+}
+#image {
+    
+    height: 150px;
+    margin: 20px auto;
+    display: block;
+    border: 3px solid #ff4c4c;
+    border-radius: 10%;
+    background-color: #333;
+    animation: glow 1.5s infinite;
+}
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px #ff4c4c;
+    }
+    50% {
+        box-shadow: 0 0 20px #ff4c4c;
+    }
+}
+#error-message {
+    color: #ff4c4c;
+    margin-top: 10px;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="half1">
+            <input id="name" type="text" placeholder="Enter Pokémon name">
+            <button onclick="pokemon()">Search</button><br>
+        </div>
+        <img id="image" src="" alt="Pokémon image">
+        <p id="image-name"></p>
+        <p id="error-message"></p>
+    </div>
+<script>
+    async function pokemon() {
+        try {
+            let pokemon = document.getElementById("name").value.toLowerCase();
+            document.getElementById("error-message").textContent = "";
+
+            let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+            if (!response.ok) {
+                throw new Error("Pokémon not found");
+            }
+
+            const data = await response.json();
+            let sprites = data.sprites.versions['generation-v']['black-white'].animated.front_default;
+            let image = document.getElementById("image");
+            image.src = sprites;
+            image.alt = pokemon.charAt(0).toUpperCase() + pokemon.slice(1);
+            document.getElementById("image-name").textContent = pokemon.charAt(0).toUpperCase() + pokemon.slice(1);
+
+        } catch (error) {
+            console.log(error);
+            document.getElementById("error-message").textContent = "Pokémon not found. Please try again.";
+        }
+    }
+</script>
+</body>
+</html>

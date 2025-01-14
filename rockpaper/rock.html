@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: yellowgreen;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+#head{
+    font-size: 3em;
+
+}
+.choices button{
+    width: 200px;
+    font-size: 4em;
+}
+.after{
+    font-size: 2em;
+}
+    </style>
+</head>
+<body>
+    <p id="head">rock paper scissors</p>
+    <div class="choices">
+        <button onclick="playgame('rock')">🗿</button>
+        <button onclick="playgame('paper')">🗞</button>
+        <button onclick="playgame('scissors')">✂</button>
+
+    </div>
+    <div class="after">
+    <p id="comchoice"></p>
+    <p id="resultcon"></p>
+    
+</div>
+</body>
+<script>
+    let computerchoice=document.getElementById("comchoice");
+    let resultcon=document.getElementById("resultcon");
+    choices=["rock","paper","scissors"];
+    let result=''
+   function playgame(playerchoice){
+    const  comchoice=choices[Math.floor(Math.random()*3)];
+    console.log(comchoice);
+   
+   if(playerchoice==comchoice){
+    result='tie'
+   }
+    else{
+        switch (playerchoice) {
+                    case "rock":
+                        result = (comchoice === 'scissors') ? 'you win' : 'you lose';
+                        break;
+                    case "paper":
+                        result = (comchoice === 'rock') ? 'you win' : 'you lose';
+                        break;
+                    case "scissors":
+                        result = (comchoice === 'paper') ? 'you win' : 'you lose';
+                        break;
+        }
+    }
+    computerchoice.textContent=`computer chose   ${comchoice}`;
+    resultcon.textContent=result;
+}
+    
+
+
+
+</script>
+</html>

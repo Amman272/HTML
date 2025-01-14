@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    color: aliceblue;
+    font-family: 'Roboto';
+    
+}
+body{
+    background-color:#000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    
+}
+#heading{
+    font-size: 7vh;
+    
+}
+#gamecontainer{
+    height: 90vh;
+    width: 90vw;
+    gap: 50px;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+.cell{
+    
+    height: 100px;
+    width: 100px;
+    background-color: #000000;
+    border: 2px solid purple;
+    
+    font-size: 70px;
+    font-family: "century gothic";
+    margin: 5px;
+    box-shadow: 0 0 1rem rgba(128, 0, 128, 0.6); /* Purple glow effect */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    
+}
+.cell:active,
+.cell.clicked {
+    box-shadow: 0 0 2rem rgba(128, 0, 128, 0.9); /* Intense glow on click/active */
+    transform: scale(1.05); /* Optional slight scaling effect for feedback */}
+
+    .cell:hover {
+        box-shadow: 0 0 1.5rem rgba(186, 85, 211, 0.9); /* Bright magenta glow on hover */
+        transform: scale(1.05); /* Slight enlargement for hover effect */
+    }
+
+#cellgrid{
+    /* display: grid;
+    grid-template-columns:repeat(3,auto);
+    width: 200px; */
+
+ width: 340px;
+ height: 350px;
+    margin-right: 2 auto;
+    gap: 10px;
+    
+}
+#turn{
+    padding: 10px;;
+    font-size: 2.4rem;
+    box-shadow: 0 0 1rem rgba(128, 0, 128, 0.6); /* Purple glow effect */
+}

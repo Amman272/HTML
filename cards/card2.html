@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card2
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    </title>
+    <style>
+       
+    *
+
+    {
+        margin: 0;
+        padding: 0;
+        
+        
+    }
+        body{
+            background-color: rgb(101, 101, 101);
+            
+        }
+        .container
+        {
+            display: flex;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            background: #9796f0;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #fbc7d4, #9796f0);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #fbc7d4, #9796f0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            
+            
+        }
+        .card
+        {
+            width: 400px;
+            height: 700px;
+            background-color: aliceblue;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .card img{
+            height: 44%;
+            width: 400px;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+        .text{
+            padding-top: 20px;
+            padding-left: 30px;
+            padding-right:30px;
+            padding-bottom: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 17px;
+        }
+        .box1{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color:#8BC6EC; 
+            border-radius: 10px;
+            padding-right: 20px;
+            padding-left: 20px;
+            font-family: Arial, Helvetica, sans-serif
+
+        }
+        .amountbox{
+           color: rgb(0, 0, 0);
+            text-align: left;
+
+        }
+        .leftbox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .imgbox img{
+            height: 60px;
+            width: 60px;
+        }
+        #paybox{
+            background-color: rgb(22, 22, 79); 
+            color: white;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            font-family: Arial, Helvetica, sans-serif
+        }
+        #cancel{
+            font-weight: bolder;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="icon.jpg" alt="">
+            <div class="text">
+                <h2>Order summary</h2>
+
+              
+                <p>Subscribe to Apple Music for unlimited access to 90 million songs, curated playlists, and exclusive content. Stream, download, and listen offline across all devices. Start your free trial today</p>
+                <div class="box1">
+                    <div class="leftbox">
+                    <div class="imgbox">
+                        <img src="music.png"  alt="">
+
+                    </div>
+                    <div class="amountbox">
+                        <p>Amount</p>
+                        <p>99.9$/Year</p>
+                    </div>
+                </div>
+                    <a href="#">change</a>
+                </div>
+                <div id="paybox">
+                    <p>proceed to pay</p>
+                </div>
+                <div id="cancel">
+                    <P>cancel Order</P>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

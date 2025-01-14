@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cards</title>
+    <style>
+    *
+    
+    {
+        margin: 0;
+        padding: 0;
+        
+        
+    }
+        body{
+            background-color: rgb(209, 209, 209);
+        }
+        .container
+        {
+            display: flex;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            background: #9796f0;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #fbc7d4, #9796f0);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #fbc7d4, #9796f0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            
+            
+        }
+        #qr
+        {
+        height: 300px;
+        border-radius: 20px;
+        }
+        .image{
+         
+        }
+        .card
+        {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           padding: 20px; 
+           width: 330px;
+            height: 570px;
+            border-radius: 20px;
+            gap: 40px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+       .textbox{
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+             <div class="image">
+                
+                     <img id="qr" src="qrcode.png" alt="qrcode">
+                
+             </div>
+                <div class="textbox">
+                    <h2>this is a qr code card</h2>
+                    
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam neque iste quisquam nihil, harum dolores necessitatibus deleniti voluptate in aliquid.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, minus?</p>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

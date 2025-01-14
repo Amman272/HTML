@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        body{
+            background: grey;
+        }
+        .bigbox{
+            border: 3px solid black;
+            background: #fbfff1;
+            height: 500px;
+            width: 700px;
+        }
+        .movingbox
+        {
+            height: 30px;
+            width: 90px;
+            position: relative;
+            top: 50%;
+            left: 3px;
+            border: 3px solid black;
+            animation: mb;
+            animation-duration: .5s;
+            animation-timing-function:cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation-iteration-count: infinite ;
+            animation-direction: alternate;
+        }
+        @keyframes mb
+        {
+            from{
+               left:50%;
+                top: 3px;
+
+
+            }
+            to{
+                left:50%;
+                top: 300px;
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="bigbox">
+        <div class="movingbox">
+            <spam>
+                moving box
+            </spam>
+        </div>
+    </div>
+</body>
+</html>

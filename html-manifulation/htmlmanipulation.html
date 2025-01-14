@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">
+        this is the heading
+    </h1>
+
+    <button id="b1"  onclick="changehead()">
+        click me to change the heading above
+    </button>
+</body>
+<script>
+    let times=0
+    let hn=2
+    let h1=document.getElementById("heading");
+    let b1=document.getElementById("b1");
+    let bodytag=document.querySelector("body");
+    
+    function alertp(){
+        alert("you clicked on "+event.target.textContent);
+    }
+    function changehead(){
+        h1.textContent=`you have changed this heading ${times} time(s)`;
+        times++;
+        if(hn<=6){
+        let newheading=document.createElement(`h${hn}`);
+        newheading.textContent=`this is ${times}th click and h${hn} header tag`;
+        bodytag.appendChild(newheading);
+        hn++;
+        
+        }
+        else if (hn <= 10) {
+            let newtext=document.createElement("p");
+            newtext.textContent=`VOID VOID LIMIT HAS REACHED`;
+            bodytag.appendChild(newtext);
+            bodytag.style.cssText = `background-color: black; color: white;`;
+        }
+
+        h1.addEventListener('click',alertp);
+    }
+
+
+</script>
+</html>
