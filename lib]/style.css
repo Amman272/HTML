@@ -1,0 +1,219 @@
+/* Basic reset to remove default margins/padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+    flex-direction: column;
+}
+
+/* Dark mode body styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e1e1e1;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Dark mode container styles */
+body.dark-mode .container {
+    background-color: #1f1f1f;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #4A90E2;
+}
+
+/* Dark mode h1 styles */
+body.dark-mode h1 {
+    color: #5f9ea0;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#form input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Dark mode input styles */
+body.dark-mode #form input {
+    border: 1px solid #555;
+    background-color: #333;
+    color: #e1e1e1;
+}
+
+/* Button Styles */
+#form button {
+    padding: 12px;
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Dark mode button styles */
+body.dark-mode #form button {
+    background-color: #2d88d9;
+}
+
+#form button:hover {
+    background-color: #357ABD;
+}
+
+/* Dark mode button hover */
+body.dark-mode #form button:hover {
+    background-color: #4f7ebc;
+}
+
+#lib {
+    margin-top: 30px;
+}
+
+#lib div {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Dark mode book div */
+body.dark-mode #lib div {
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+}
+
+#lib p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Dark mode p tags */
+body.dark-mode #lib p {
+    color: #e1e1e1;
+}
+
+#lib button {
+    padding: 8px 12px;
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+/* Dark mode delete button */
+body.dark-mode #lib button {
+    background-color: #e55c4b;
+}
+
+#lib button:hover {
+    background-color: #e55c4b;
+}
+
+/* Dark mode delete button hover */
+body.dark-mode #lib button:hover {
+    background-color: #ff4b4b;
+}
+
+.statusupdate {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Dark mode status update button */
+body.dark-mode .statusupdate {
+    background-color: #45a049;
+}
+
+.statusupdate:hover {
+    background-color: #45a049;
+}
+
+/* Dark mode status update button hover */
+body.dark-mode .statusupdate:hover {
+    background-color: #357a33;
+}
+
+hr {
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+/* Dark mode hr */
+body.dark-mode hr {
+    border-color: #444;
+}
+
+/* Dark Mode Toggle Switch Style */
+.toggle-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-switch {
+    width: 60px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-switch.dark {
+    background-color: #4CAF50;
+}
+
+.toggle-switch .toggle-ball {
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    transition: left 0.3s;
+}
+
+.toggle-switch.dark .toggle-ball {
+    left: 30px;
+}

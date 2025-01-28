@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>books</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id ="form">
+            <p><input type="text" id ='title' name="title" placeholder='title'></p>
+            <p><input type="text" id ='author' name="author" placeholder='author'></p>
+            <p><input type="text" id ='pages' name="pages" placeholder='pages'></p>
+            <p><input type="checkbox" name="read" value="yes" placeholder="read ?">  read?</p>
+            <button id="add">add to list</button>
+        </div>
+        <div id="lib"></div>
+        
+    </div>
+</body>
+<script>
+const lib=[];
+
+function book(title,author,pages,read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+}
+ 
+document.querySelector("#add").addEventListener('click',addbooktolib);
+function addbooktolib(){
+    let title=document.getElementById("title").value;
+    let author=document.getElementById("author").value;
+    let pages=document.getElementById("pages").value;
+    let read = document.querySelector("input[name='read']").checked;
+    const newbook = new book(title,author,pages,read);
+    lib.push(newbook);
+    console.log(lib);
+    const bookdiv= document.createElement('div');
+    bookdiv.innerHTML=` <p>Title: ${newbook.title}</p>
+            <p>Author: ${newbook.author}</p>
+            <p>Pages: ${newbook.pages}</p>
+            <p>Read: ${newbook.read ? "Yes" : "No"}</p>
+            <button class="statusupdate"></button>
+            <button class="delete">delete</button>
+
+            
+            `;
+  
+    // Set default button name based on read status
+    if (newbook.read) {
+        bookdiv.querySelector(".statusupdate").innerHTML = "Mark as not completed";
+    } else {
+        bookdiv.querySelector(".statusupdate").innerHTML = "Mark as completed";
+    }
+
+    // Toggle the read status and update button text when clicked
+    bookdiv.querySelector('.statusupdate').addEventListener('click', () => {
+        if (newbook.read) {
+            newbook.read = false;  // Update the read status
+            bookdiv.querySelector(".statusupdate").innerHTML = "Mark as completed";
+        } else {
+            newbook.read = true;  // Update the read status
+            bookdiv.querySelector(".statusupdate").innerHTML = "Mark as not completed";
+        }
+
+        // Update the displayed read status on the book
+        bookdiv.querySelector('p:nth-child(4)').textContent = `Read: ${newbook.read ? "Yes" : "No"}`;
+    });
+        const libdiv=document.getElementById("lib");
+        libdiv.appendChild(bookdiv);
+        console.log("Book added to library:", newbook);
+        console.log("Current library:", lib);
+          
+       
+        bookdiv.querySelector('.delete').addEventListener('click',()=>bookremove(bookdiv,newbook))
+}
+
+function bookremove(divofbook,bookinarray){
+    let index= lib.indexOf(bookinarray);
+    lib.splice(index,1);
+    divofbook.remove();
+
+}
+
+
+
+
+
+
+
+
+
+//console.log(`Title: ${title}, Author: ${author}, Pages: ${pages}, Read: ${read}`);
+
+
+
+
+
+
+// Dark Mode Toggle Script
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleContainer = document.createElement('div');
+    toggleContainer.classList.add('toggle-container');
+
+    const toggleSwitch = document.createElement('div');
+    toggleSwitch.classList.add('toggle-switch');
+
+    const toggleBall = document.createElement('div');
+    toggleBall.classList.add('toggle-ball');
+
+    toggleSwitch.appendChild(toggleBall);
+    toggleContainer.appendChild(toggleSwitch);
+
+    document.body.appendChild(toggleContainer);
+
+    toggleSwitch.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        toggleSwitch.classList.toggle('dark');
+    });
+});
+
+
+</script>
+</html>

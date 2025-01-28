@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+.main img{
+    height: 50vw;
+}
+
+/* // */
+.right{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    padding-top: 20%;
+
+}
+ .right form{}
